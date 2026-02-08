@@ -1,3 +1,4 @@
 **/node_modules/
 backend/**/venv
 **.cache
+**/__pycache__/**/*

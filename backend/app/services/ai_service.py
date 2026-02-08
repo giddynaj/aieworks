@@ -11,11 +11,11 @@ logger = logging.getLogger(__name__)
 class AIService:
     def __init__(self):
         genai.configure(api_key=settings.GEMINI_API_KEY)
-        self.model = genai.GenerativeModel('gemini-pro')
+        self.model = genai.GenerativeModel('gemini-2.5-flash')
 
     def generate_response(self, user_message: str, conversation_history: List[ChatMessage] = []) -> str:
         try:
-            context = self.build_context(conversation_history)
+            context = self._build_context(conversation_history)
             full_prompt = f"{context}\nUser: {user_message}\nAssistant:"
             logger.info(f"Generating AI response for: {user_message[:50]}...")
             response = self.model.generate_content(full_prompt)

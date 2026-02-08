@@ -21,7 +21,7 @@ async def chat_endpoint(request: ChatRequest):
 
         return ChatResponse(
             response=ai_response,
-            success=True
+            success=True,
             timestamp=datetime.now()
         )
 
