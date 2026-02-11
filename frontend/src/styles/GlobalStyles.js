@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
@@ -22,21 +22,20 @@ export const GlobalStyles = createGlobalStyle`
   }
   `;
 
-  export const theme = {
-    colors: {
-      primary: '#4f46e5',
-      secondary: '#10b981',
-      background: '#ffffff',
-      surface: '#f8fafc',
-      text: '#1f2937',
-      border: '#e5e7eb',
-    },
-    shadows: {
-      lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-    },
-    borderRadius: {
-      lg: '0.5rem',
-      xl: '0.75',
-    }
-    }
-  }
+export const theme = {
+  colors: {
+    primary: "#4f46e5",
+    secondary: "#10b981",
+    background: "#ffffff",
+    surface: "#f8fafc",
+    text: "#1f2937",
+    border: "#e5e7eb",
+  },
+  shadows: {
+    lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+  },
+  borderRadius: {
+    lg: "0.5rem",
+    xl: "0.75",
+  },
+};
