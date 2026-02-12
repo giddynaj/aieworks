@@ -6,6 +6,9 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    margin: 0;
+  }
   body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

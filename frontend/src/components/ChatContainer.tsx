@@ -1,31 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
 import { Send, Bot, User, Loader } from "lucide-react";
 import { chatAPI } from "../services/api";
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 800px;
-  height: 600px;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 20px 25 -5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-`;
-
-const Header = styled.div`
-  background: ${(props) => props.theme.colors.primary};
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-`;
+import styles from "../styles/chatContainer.module.css";
 
 type ChatMessage = {
-  role: 'assistant' | 'user' | 'system';
+  role: "assistant" | "user" | "system";
   content: string;
-}
+};
 
 const ChatContainer = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -42,7 +23,7 @@ const ChatContainer = () => {
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
 
-    const userMessage = {
+    const userMessage: ChatMessage = {
       role: "user",
       content: inputMessage.trim(),
     };
@@ -52,7 +33,7 @@ const ChatContainer = () => {
     setIsLoading(true);
 
     try {
-      const response = await chatAPI.sendMessage(userMessage.content, message);
+      const response = await chatAPI.sendMessage(userMessage.content, messages);
 
       if (response.success) {
         setMessages((prev) => [
@@ -71,15 +52,15 @@ const ChatContainer = () => {
   };
 
   return (
-    <Container>
-      <Header>
+    <div className={styles.container}>
+      <div className={styles.header}>
         <h1>AI Chat Assistant</h1>
         <p>Powered by Python & Gemini AI - Day 1 Project</p>
-      </Header>
+      </div>
 
       {/* Messages and input components would go here */}
       {/* Full implementation available in the complete source files */}
-    </Container>
+    </div>
   );
 };
 
