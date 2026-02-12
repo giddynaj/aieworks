@@ -10,7 +10,10 @@ const apiClient = axios.create({
 });
 
 export const chatAPI = {
-  sendMessage: async (message: string, conversationHistory = []) => {
+  sendMessage: async (
+    message: string,
+    conversationHistory: { role: string; content: string }[] = [],
+  ) => {
     try {
       const response = await apiClient.post("/chat", {
         message,

@@ -9,6 +9,6 @@ class Settings:
     DEBUG = True
     HOST = "0.0.0.0"
     PORT = 8000
-    CORS_ORIGINS = ["http://localhost:3000"]
+    CORS_ORIGINS = ["http://localhost:5173"]
 
 settings = Settings()
